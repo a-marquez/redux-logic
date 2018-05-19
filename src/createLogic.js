@@ -80,14 +80,14 @@ export const configureLogic = (options = {}) => {
    @param {object} logicOptions object defining logic operation
    @param {string} logicOptions.name optional string name, defaults
      to generated name from type and idx
-   @param {string | regex | function | array} logicOptions.type action
+   @param {string | symbol | regex | function | array} logicOptions.type action
      type(s) that this logic is used for. A string '*' indicates that
      it applies to all types, otherwise strings are used for exact match.
      A regex can also be used to match. If a function is supplied like
      a redux-actions action function, then it will use call its toString()
      method to get the associated action type. An array of any of these
      can be supplied to extend match to more types.
-   @param {string | regex | function | array} logicOptions.cancelType
+   @param {string | symbol | regex | function | array} logicOptions.cancelType
      action type(s) that will cause a cancellation. String, regex, fn,
      array are used similar to how the logicOptions.type works.
      Cancellation will automatically prevent dispatches from being used
@@ -138,9 +138,9 @@ export const configureLogic = (options = {}) => {
      multi-dispatch mode is enabled and continues until done is called
      or cancelled. The default is false unless the done cb is included
      in the process fn signature.
-   @param {string|function} logicOptions.processOptions.successType
+   @param {string|symbol|function} logicOptions.processOptions.successType
      action type or action creator fn, use value as payload
-   @param {string|function} logicOptions.processOptions.failType
+   @param {string|symbol|function} logicOptions.processOptions.failType
      action type or action creator fn, use value as payload
    @param {number} logicOptions.warnTimeout In non-production environment
      a console.error message will be logged if logic doesn't complete

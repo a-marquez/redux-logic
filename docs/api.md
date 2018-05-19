@@ -41,8 +41,8 @@ const fooLogic = createLogic({
   // optional name - used in monitor$ and error messages, the default name assigned is L(TYPE)-N where TYPE is the action type(s) and N is the index in the logic array
 
   // filtering/canceling
-  type: T, // required string, regex, array of str/regex, use '*' for all
-  cancelType: CT, // string, regex, array of strings or regexes
+  type: T, // required string, regex, symbol, array of str/regex/symbol, use '*' for all
+  cancelType: CT, // string, regex, symbol, array of strings or regexes or symbols
   // type and cancelType also support redux-actions fns for which
   //   the fn.toString() returns the associated action type
 
